@@ -45,7 +45,6 @@ function Persona(nombre,pass) {
 
 	this.nombre = nombre || 'Defaul'; //Constructor con valores default
 	this.pass = pass || 'Default Pass';
-	}
 }
 //Los valores default se definen en un constructor para que cuando el primer valores(nombre o pass) no esten definidos le asigne un valor predeterminado y asi el programa no explote
 

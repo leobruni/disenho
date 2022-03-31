@@ -71,7 +71,11 @@ function saludar(usuario){
 	return('hola ' + usuario);
 }
 
-function crearSaludo(usuario,funcionCallback) {//funcionn callback, se ingresa como parametro la funcion y retorna el resultado de esta
+function devolverArreglo(arreglo){
+	return arreglo;
+}
+
+function crearSaludo(usuario,funcionCallback) {//funcion callback, se ingresa como parametro la funcion y retorna el resultado de esta
 	return funcionCallback(usuario);
 }
 

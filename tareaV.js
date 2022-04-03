@@ -30,16 +30,26 @@ function agregarMetodoPrototype(Constructor) {
   // Agrega un método al Constructor del `prototype`
   // El método debe llamarse "saludar" y debe devolver la string "Hello World!"
   // Tu código:
-
+  Constructor['saludar']= function(){
+    return 'hello kitty';
+  }
 }
 
-function agregarStringInvertida() {
+function agregarStringInvertida(cadena) {
   // Agrega un método al prototype de String que devuelva la misma cadena de caracteres, pero invertida.
   // El método debe llamarse "reverse"
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
+  
+  this.cadena = cadena.split("").reverse().join("");
+  //La funcion split() divide la cadena y la convierte en un arreglo
+  //La funcion reverse() invierte el orden del arreglo de atras para delante
+  //La funcion join() une el arreglo(ya invertido) en una cadena de caracteres
+  return this.cadena;
+  
 }
+
 
 // ---------------------------------------------------------------------------//
   //Crea el constructor de la clase "Persona"

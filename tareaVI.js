@@ -7,7 +7,7 @@ function mayuscula(nombre) {
   return nombre.charAt(0).toUpperCase() + nombre.slice(1);
   //charAt() Selecciona el caracter de la cadena en la posicion definida dentro de los parentesis.
   //toUpperCase() Lleva a mayusculas la cadena
-  // slice() corta la cadena desde la posicion indicada en el parentesis.
+  // slice() inicia la cadena desde la posicion indicada en el parentesis.
 }
 
 function invocarCallback(cb) {
@@ -68,12 +68,33 @@ function map(array, cb) {
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
+  var nuevoArray=[];
+  for (let i = 0; i < array.length; i++) {
+      nuevoArray.push(cb(array[i]));    
+  }
+  return 'Valores: '+nuevoArray+' | longitud: '+nuevoArray.length;
+  //(En consola): map([1,2,3,4,'hola',kike={nombre:'jesus'}, obj={propiedad1:'Primera',p2:2}], function devolverElemento(a){return a});
 }
 
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
+  let result = array.filter(elem => elem.charAt(0) != 'a');
+  //El método filter() crea un nuevo array con todos los elementos 
+  //que cumplan la condición implementada por la función dada.
+  // En este caso queremos obtener los elementos que no empiecen por la letra 'a'
+  // Por lo tanto tenemos que agregar al resultado los string que en su posicion 0
+  // Sean diferentes de 'a'.
+
+  for (let i = 0; i < array.length; i++) {
+    if(array[i].charAt(0)=='a'){
+      array.splice(i,1);
+      i=0;
+    }
+  }
+  //Este recorrido es una opcion aunque se tiene que optimizar
+  return result;
 }
 
 // No modificar nada debajo de esta línea
